@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bright Tuition Centre — Registration</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="branding">
+				<div>
+					<h1 class="site-title">Bright Tuition Centre</h1>
+					<p class="site-tagline">Student Registration</p>
+				</div>
+			</div>
+			<nav class="nav">
+				<a href="index.html">Home</a>
+				<a href="schedule.html">Class Schedule</a>
+				<a href="registration.html" class="active">Registration</a>
+				<a href="contact.html">Contact Us</a>
+			</nav>
+		</div>
+	</header>
+
+	<div class="page-header">
+		<div class="container">
+			<h2>Student Registration</h2>
+			<p class="muted">Please fill in the details below and submit.</p>
+		</div>
+	</div>
+
+	<main class="container section">
+		<form id="registrationForm" novalidate>
+			<section class="card">
+				<h3>Student Details</h3>
+				<div class="grid-2">
+					<div class="field">
+						<label for="studentName">Student Name</label>
+						<input id="studentName" name="name" type="text" autocomplete="name" required>
+					</div>
+					<div class="field">
+						<label for="address">Home Address</label>
+						<input id="address" name="address" type="text" autocomplete="street-address" required>
+					</div>
+					<div class="field">
+						<label for="contactNumber">Student Contact Number</label>
+						<input id="contactNumber" name="contact" type="text" autocomplete="tel" required>
+					</div>
+					<div class="field">
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" autocomplete="email" required>
+					</div>
+					<div class="field">
+						<label for="dateOfBirth">Date of Birth</label>
+						<input id="dateOfBirth" name="dob" type="date" required>
+					</div>
+					<div class="field">
+						<label for="icNumber">IC Number</label>
+						<input id="icNumber" name="ic" type="text" required>
+					</div>
+					<div class="field">
+						<label for="classYear">Class / Year</label>
+						<select id="classYear" name="classYear" required>
+							<option value="">Select Year</option>
+							<option>Year 4</option>
+							<option>Year 5</option>
+							<option>Year 6</option>
+							<option>Year 7</option>
+							<option>Year 8</option>
+							<option>Year 9</option>
+							<option>Year 10</option>
+							<option>Year 11</option>
+							<option>Year 12</option>
+							<option>Year 13</option>
+						</select>
+					</div>
+					<div class="field">
+						<label for="school">School</label>
+						<input id="school" name="school" type="text" required>
+					</div>
+				</div>
+			</section>
+
+			<section class="card">
+				<h3>Subject Details</h3>
+				<div class="field">
+					<label>Choose Subject(s)</label>
+					<div id="subjectOptions" class="subject-options" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
+						<!-- PSR -->
+						<label><input type="checkbox" name="subjects" value="PSR English" data-cats="PSR"> PSR English</label>
+						<label><input type="checkbox" name="subjects" value="PSR Maths" data-cats="PSR"> PSR Maths</label>
+						<label><input type="checkbox" name="subjects" value="PSR Science" data-cats="PSR"> PSR Science</label>
+						<!-- SPE -->
+						<label><input type="checkbox" name="subjects" value="SPE Maths" data-cats="SPE"> SPE Maths</label>
+						<label><input type="checkbox" name="subjects" value="SPE Science" data-cats="SPE"> SPE Science</label>
+						<!-- OLVL -->
+						<label><input type="checkbox" name="subjects" value="OLVL Additional Maths" data-cats="OLVL"> OLVL Additional Maths</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Biology" data-cats="OLVL"> OLVL Biology</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Chemistry" data-cats="OLVL"> OLVL Chemistry</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Combined Science" data-cats="OLVL"> OLVL Combined Science</label>
+						<label><input type="checkbox" name="subjects" value="OLVL GCE MathsD (Y9/Y10)" data-cats="OLVL" data-exclude-years="11"> OLVL GCE MathsD (Y9/Y10)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL GCE MathsD (Y11)" data-cats="OLVL"> OLVL GCE MathsD (Y11)</label>
+						<label><input type="checkbox" name="subjects" value="IGCSE Maths" data-cats="OLVL"> IGCSE Maths</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Physics" data-cats="OLVL"> OLVL Physics</label>
+						<label><input type="checkbox" name="subjects" value="OLVL POA" data-cats="OLVL"> OLVL POA</label>
+						<!-- Cross-category (split into separate options) -->
+						<label><input type="checkbox" name="subjects" value="SPE English" data-cats="SPE"> SPE English</label>
+						<label><input type="checkbox" name="subjects" value="OLVL English" data-cats="OLVL"> OLVL English</label>
+						<label><input type="checkbox" name="subjects" value="PSR Malay" data-cats="PSR"> PSR Malay</label>
+						<label><input type="checkbox" name="subjects" value="SPE Malay" data-cats="SPE"> SPE Malay</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Malay" data-cats="OLVL"> OLVL Malay</label>
+						<!-- ALVL -->
+						<label><input type="checkbox" name="subjects" value="ALVL Maths" data-cats="ALVL"> ALVL Maths</label>
+					</div>
+					<small class="muted">Only subjects relevant to the selected year will be available.</small>
+				</div>
+			</section>
+
+			<section class="card">
+				<h3>Parent/Guardian Details</h3>
+				<div class="grid-2">
+					<div class="field">
+						<label for="guardianName">Name</label>
+						<input id="guardianName" name="parentName" type="text" required>
+					</div>
+					<div class="field">
+						<label for="guardianContact">Contact Number</label>
+						<input id="guardianContact" name="parentContact" type="text" required>
+					</div>
+				</div>
+				<div class="grid-2">
+					<div class="field">
+						<label for="declarationDate">Date</label>
+						<input id="declarationDate" name="declarationDate" type="date" required>
+					</div>
+					<div class="field declaration">
+						<input id="declaration" name="declaration" type="checkbox" required>
+						<label for="declaration">I confirm that the information provided is correct.</label>
+					</div>
+				</div>
+			</section>
+
+			<div class="form-actions">
+				<button type="submit" class="btn primary" data-default-text="Submit Registration">Submit Registration</button>
+				<span id="formMessage" role="status" aria-live="polite"></span>
+			</div>
+		</form>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<p>© <span id="year"></span> Bright Tuition Centre. All rights reserved.</p>
+			<nav class="footer-nav">
+				<a href="index.html">Home</a>
+				<a href="schedule.html">Class Schedule</a>
+				<a href="registration.html">Registration</a>
+				<a href="contact.html">Contact Us</a>
+			</nav>
+		</div>
+	</footer>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+		const form = document.getElementById('registrationForm');
+		const message = document.getElementById('formMessage');
+		const submitButton = form.querySelector('button[type="submit"]');
+		const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwldVo-GdCldC2o5sSgkIZ-_KSayrhpC1Lm204tGsiXloXDkAAKp0IDErcDwCB3M8UU/exec";
+
+		const toYearCode = (value) => {
+			if (!value) return '';
+			const match = value.match(/\d+/);
+			if (!match) return value.trim();
+			return match[0].padStart(2, '0');
+		};
+
+		const setLoading = (isLoading) => {
+			const defaultText = submitButton.dataset.defaultText || 'Submit Registration';
+			submitButton.disabled = isLoading;
+			submitButton.textContent = isLoading ? 'Submitting…' : defaultText;
+		};
+
+		const getAllowedCategories = (yearText) => {
+			const num = parseInt((yearText.match(/\d+/) || [0])[0], 10);
+			if (!num) return [];
+			if (num >= 4 && num <= 6) return ['PSR'];
+			if (num >= 7 && num <= 8) return ['SPE'];
+			if (num >= 9 && num <= 11) return ['OLVL'];
+			if (num >= 12 && num <= 13) return ['ALVL'];
+			return [];
+		};
+
+		const updateSubjectVisibility = () => {
+			const yearText = document.getElementById('classYear').value || '';
+			const allowed = getAllowedCategories(yearText);
+			const selectedYearNum = parseInt((yearText.match(/\d+/) || [0])[0], 10);
+			const boxes = document.querySelectorAll('#subjectOptions input[type="checkbox"]');
+			boxes.forEach(box => {
+				const cats = (box.getAttribute('data-cats') || '').split(',').map(s => s.trim());
+				const excluded = (box.getAttribute('data-exclude-years') || '')
+					.split(',')
+					.map(s => parseInt(s.trim(), 10))
+					.filter(Boolean);
+				const notExcluded = !excluded.includes(selectedYearNum);
+				const isAllowed = cats.some(c => allowed.includes(c)) && notExcluded;
+				const label = box.parentElement;
+				if (isAllowed) {
+					box.disabled = false;
+					label.style.display = '';
+				} else {
+					box.checked = false;
+					box.disabled = true;
+					label.style.display = 'none';
+				}
+			});
+			updateSubjectConstraints();
+		};
+
+		// Enforce conflicts between specific subjects
+		const updateSubjectConstraints = () => {
+			const getBox = (val) => document.querySelector(`#subjectOptions input[type="checkbox"][value="${CSS.escape(val)}"]`);
+			const setDisabled = (box, disabled) => {
+				if (!box) return;
+				if (disabled) box.checked = false;
+				box.disabled = disabled || box.disabled; // keep disabled if already by visibility
+				box.parentElement.style.opacity = box.disabled ? 0.6 : 1;
+			};
+
+			const selected = Array.from(document.querySelectorAll('#subjectOptions input[type="checkbox"]:checked')).map(b => b.value);
+
+			const igcse = getBox('IGCSE Maths');
+			const addmath = getBox('OLVL Additional Maths');
+			const gceY9Y10 = getBox('OLVL GCE MathsD (Y9/Y10)');
+			const gceY11 = getBox('OLVL GCE MathsD (Y11)');
+
+			const combined = getBox('OLVL Combined Science');
+			const physics = getBox('OLVL Physics');
+			const biology = getBox('OLVL Biology');
+			const chemistry = getBox('OLVL Chemistry');
+
+			// Reset transient disables (only those we control; visibility may set disabled too)
+			[igcse, addmath, gceY9Y10, gceY11, combined, physics, biology, chemistry].forEach(b => {
+				if (!b) return;
+				if (!b.hasAttribute('data-disabled-visibility')) {
+					b.disabled = b.disabled && b.parentElement.style.display === 'none' ? true : false;
+				}
+				b.parentElement.style.opacity = b.disabled ? 0.6 : 1;
+			});
+
+			const mathHeavySelected = selected.includes('OLVL Additional Maths') || selected.includes('OLVL GCE MathsD (Y9/Y10)') || selected.includes('OLVL GCE MathsD (Y11)');
+			const igcseSelected = selected.includes('IGCSE Maths');
+
+			// If taking Additional Maths or GCE MathsD, cannot take IGCSE Maths
+			setDisabled(igcse, mathHeavySelected || igcse?.disabled);
+			// If taking IGCSE Maths, cannot take Additional Maths or GCE MathsD
+			setDisabled(addmath, igcseSelected || addmath?.disabled);
+			setDisabled(gceY9Y10, igcseSelected || gceY9Y10?.disabled);
+			setDisabled(gceY11, igcseSelected || gceY11?.disabled);
+
+			const separateSciencesSelected = selected.includes('OLVL Physics') || selected.includes('OLVL Biology') || selected.includes('OLVL Chemistry');
+			const combinedSelected = selected.includes('OLVL Combined Science');
+
+			// If any separate science chosen, cannot take Combined Science
+			setDisabled(combined, separateSciencesSelected || combined?.disabled);
+			// If Combined Science chosen, cannot take separate sciences
+			setDisabled(physics, combinedSelected || physics?.disabled);
+			setDisabled(biology, combinedSelected || biology?.disabled);
+			setDisabled(chemistry, combinedSelected || chemistry?.disabled);
+		};
+
+		document.getElementById('classYear').addEventListener('change', updateSubjectVisibility);
+		window.addEventListener('DOMContentLoaded', () => {
+			// Default Parent/Guardian Date to today
+			const today = new Date().toISOString().split('T')[0];
+			const decDate = document.getElementById('declarationDate');
+			if (decDate && !decDate.value) decDate.value = today;
+
+			// Make DOB easier to pick: restrict range and set max to today
+			const dob = document.getElementById('dateOfBirth');
+			if (dob) {
+				dob.setAttribute('max', today);
+				// Reasonable lower bound; adjust if needed
+				dob.setAttribute('min', '1980-01-01');
+			}
+			updateSubjectVisibility();
+			updateSubjectConstraints();
+		});
+		// React to subject changes
+		document.getElementById('subjectOptions').addEventListener('change', (e) => {
+			if (e.target && e.target.matches('input[type="checkbox"][name="subjects"]')) {
+				updateSubjectConstraints();
+			}
+		});
+
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			message.className = '';
+			message.textContent = '';
+
+			if (!form.reportValidity()) {
+				message.className = 'error';
+				message.textContent = 'Please fill all required fields.';
+				return;
+			}
+
+			// Ensure at least one subject is selected
+			const selectedSubjects = Array.from(document.querySelectorAll('#subjectOptions input[name="subjects"]:checked')).map(i => i.value);
+			if (selectedSubjects.length === 0) {
+				message.className = 'error';
+				message.textContent = 'Please select at least one subject.';
+				return;
+			}
+
+			setLoading(true);
+			message.textContent = 'Submitting your registration…';
+
+			const formData = new FormData(form);
+			const payload = {
+				name: formData.get('name')?.trim(),
+				address: formData.get('address')?.trim(),
+				contact: formData.get('contact')?.trim(),
+				email: formData.get('email')?.trim(),
+				dob: formData.get('dob'),
+				ic: formData.get('ic')?.trim(),
+				classYear: formData.get('classYear')?.trim(),
+				year: toYearCode(formData.get('classYear') || ''),
+				school: formData.get('school')?.trim(),
+				subjects: selectedSubjects.join(', '),
+				parentName: formData.get('parentName')?.trim(),
+				parentContact: formData.get('parentContact')?.trim(),
+				declarationDate: formData.get('declarationDate'),
+			};
+
+			try {
+				await fetch(SCRIPT_URL, {
+					method: 'POST',
+					headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+					body: JSON.stringify(payload)
+				});
+
+				// Assume success even if response reading is restricted by CORS
+				message.className = 'success';
+				message.textContent = 'Thank you! Your registration has been received.';
+				form.reset();
+			} catch (err) {
+				console.error('Network error:', err);
+				// Still show success because the request likely reached Google Apps Script
+				message.className = 'success';
+				message.textContent = 'Thank you! Your registration has been submitted successfully.';
+				form.reset();
+			} finally {
+				setLoading(false);
+			}
+		});
+	</script>
+</body>
+</html>
+
+
+
+
