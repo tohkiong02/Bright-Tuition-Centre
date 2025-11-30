@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bright Tuition Centre — Registration</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="branding">
+				<div>
+					<h1 class="site-title">Bright Tuition Centre</h1>
+					<p class="site-tagline">Student Registration</p>
+				</div>
+			</div>
+			<nav class="nav">
+				<a href="index.html">Home</a>
+				<a href="schedule.html">Class Schedule</a>
+				<a href="registration.html" class="active">Registration</a>
+				<a href="contact.html">Contact Us</a>
+			</nav>
+		</div>
+	</header>
+
+	<div class="page-header">
+		<div class="container">
+			<h2>Student Registration</h2>
+			<p class="muted">Please fill in the details below and submit.</p>
+			<div class="note" style="margin-top:16px;padding:12px;background:#fff3cd;border-left:4px solid #ffc107;border-radius:4px;">
+				<strong>Important Notice:</strong> This is the first part of registration. To secure your class slot, parents/guardians must visit the centre in person to complete payment and sign the policy terms.
+			</div>
+		</div>
+	</div>
+
+	<main class="container section">
+		<form id="registrationForm" novalidate>
+			<section class="card">
+				<h3>Student Details</h3>
+				<div class="grid-2">
+					<div class="field">
+						<label for="studentName">Student Name</label>
+						<input id="studentName" name="name" type="text" autocomplete="name" required>
+					</div>
+					<div class="field">
+						<label for="address">Home Address</label>
+						<input id="address" name="address" type="text" autocomplete="street-address" required>
+					</div>
+					<div class="field">
+						<label for="contactNumber">Student Contact Number</label>
+						<input id="contactNumber" name="contact" type="text" autocomplete="tel" required>
+					</div>
+					<div class="field">
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" autocomplete="email" required>
+					</div>
+					<div class="field">
+						<label for="dateOfBirth">Date of Birth</label>
+						<input id="dateOfBirth" name="dob" type="date" required>
+					</div>
+					<div class="field">
+						<label for="icNumber">IC Number</label>
+						<input id="icNumber" name="ic" type="text" required>
+					</div>
+					<div class="field">
+						<label for="classYear">Class / Year</label>
+						<select id="classYear" name="classYear" required>
+							<option value="">Select Year</option>
+							<option>Year 4</option>
+							<option>Year 5</option>
+							<option>Year 6</option>
+							<option>Year 7</option>
+							<option>Year 8</option>
+							<option>Year 9</option>
+							<option>Year 10</option>
+							<option>Year 11</option>
+							<option>Year 12</option>
+							<option>Year 13</option>
+						</select>
+					</div>
+					<div class="field">
+						<label for="school">School</label>
+						<input id="school" name="school" type="text" required>
+					</div>
+				</div>
+			</section>
+
+			<section class="card">
+				<h3>Subject Details</h3>
+				<div class="field">
+					<label>Choose Subject(s)</label>
+					<div id="subjectOptions" class="subject-options" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
+						<!-- SPE -->
+						<label><input type="checkbox" name="subjects" value="SPE English" data-cats="SPE" data-time="MON-19"> SPE English</label>
+						<label><input type="checkbox" name="subjects" value="SPE Maths" data-cats="SPE" data-time="WED-19"> SPE Maths</label>
+						<label><input type="checkbox" name="subjects" value="SPE Malay" data-cats="SPE" data-time="SAT-19"> SPE Malay</label>
+						<label><input type="checkbox" name="subjects" value="SPE Science" data-cats="SPE" data-time="THU-19"> SPE Science</label>
+						<!-- O Level -->
+						<label><input type="checkbox" name="subjects" value="OLVL English" data-cats="OLVL" data-time="MON-19"> O Level English</label>
+						<label><input type="checkbox" name="subjects" value="IGCSE Maths" data-cats="OLVL" data-time="MON-19"> IGCSE Maths</label>
+						<label><input type="checkbox" name="subjects" value="OLVL GCE MathsD (Y11)" data-cats="OLVL" data-time="TUE-19" data-include-years="11"> O Level GCE Maths D (Y11)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL IRK (Y9/Y10)" data-cats="OLVL" data-time="TUE-19" data-exclude-years="11"> O Level IRK (Y9/Y10)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL GCE MathsD (Y9/Y10)" data-cats="OLVL" data-exclude-years="11" data-time="WED-19"> O Level GCE Maths D (Y9/Y10)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Combined Science (Y9/Y10)" data-cats="OLVL" data-exclude-years="11" data-time="FRI-14"> O Level Combined Science (Y9/Y10)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Combined Science (Y11)" data-cats="OLVL" data-time="FRI-16" data-include-years="11"> O Level Combined Science (Y11)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Chemistry (Y9/Y10)" data-cats="OLVL" data-exclude-years="11" data-time="FRI-16"> O Level Chemistry (Y9/Y10)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Chemistry (Y11)" data-cats="OLVL" data-time="FRI-19" data-include-years="11"> O Level Chemistry (Y11)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Biology (Y9/Y10)" data-cats="OLVL" data-exclude-years="11" data-time="FRI-19"> O Level Biology (Y9/Y10)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Biology (Y11)" data-cats="OLVL" data-time="SUN-19" data-include-years="11"> O Level Biology (Y11)</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Physics" data-cats="OLVL" data-time="SAT-19"> O Level Physics</label>
+						<label><input type="checkbox" name="subjects" value="OLVL Malay" data-cats="OLVL" data-time="THU-19"> O Level Malay</label>
+						<label><input type="checkbox" name="subjects" value="OLVL IRK (Y11)" data-cats="OLVL" data-time="SUN-12" data-include-years="11"> O Level IRK (Y11)</label>
+						<!-- A Level -->
+						<label><input type="checkbox" name="subjects" value="ALVL Maths" data-cats="ALVL" data-time="FRI-14"> A Level Maths</label>
+						<label><input type="checkbox" name="subjects" value="ALVL Biology" data-cats="ALVL" data-time="THU-16"> A Level Biology</label>
+					</div>
+					<small class="muted">Only subjects relevant to the selected year will be available.</small>
+					<p id="subjectClash" class="error" style="display:none;margin-top:8px;"></p>
+
+					<div class="note" style="margin-top:12px;">
+						<strong>Package tip:</strong> Take 4 or more subjects within the same level to unlock the discounted package rate shown below. Fewer than 4 subjects stay at the normal per-subject rate.
+					</div>
+					<p style="margin:10px 0 0 0;"><a href="schedule.html">View the full class schedule</a></p>
+
+					<div class="card" style="margin-top:14px; padding:12px;">
+						<h4 style="margin:0 0 6px 0;">Estimated Fees</h4>
+						<p class="muted" style="margin:0 0 8px 0;">Prices adjust automatically based on your selections.</p>
+						<div id="priceSummary" style="display:grid; gap:6px;"></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="card">
+				<h3>Parent/Guardian Details</h3>
+				<div class="grid-2">
+					<div class="field">
+						<label for="guardianName">Name</label>
+						<input id="guardianName" name="parentName" type="text" required>
+					</div>
+					<div class="field">
+						<label for="guardianContact">Contact Number</label>
+						<input id="guardianContact" name="parentContact" type="text" required>
+					</div>
+				</div>
+				<div class="grid-2">
+					<div class="field">
+						<label for="declarationDate">Date</label>
+						<input id="declarationDate" name="declarationDate" type="date" required>
+					</div>
+					<div class="field declaration">
+						<input id="declaration" name="declaration" type="checkbox" required>
+						<label for="declaration">I confirm that the information provided is correct.</label>
+					</div>
+				</div>
+			</section>
+
+			<div class="form-actions">
+				<button type="submit" class="btn primary" data-default-text="Submit Registration">Submit Registration</button>
+				<span id="formMessage" role="status" aria-live="polite"></span>
+			</div>
+		</form>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<p>© <span id="year"></span> Bright Tuition Centre. All rights reserved.</p>
+			<nav class="footer-nav">
+				<a href="index.html">Home</a>
+				<a href="schedule.html">Class Schedule</a>
+				<a href="registration.html">Registration</a>
+				<a href="contact.html">Contact Us</a>
+			</nav>
+		</div>
+	</footer>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+		const form = document.getElementById('registrationForm');
+		const message = document.getElementById('formMessage');
+		const submitButton = form.querySelector('button[type="submit"]');
+		const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwldVo-GdCldC2o5sSgkIZ-_KSayrhpC1Lm204tGsiXloXDkAAKp0IDErcDwCB3M8UU/exec";
+
+		const toYearCode = (value) => {
+			if (!value) return '';
+			const match = value.match(/\d+/);
+			if (!match) return value.trim();
+			return match[0].padStart(2, '0');
+		};
+
+		const setLoading = (isLoading) => {
+			const defaultText = submitButton.dataset.defaultText || 'Submit Registration';
+			submitButton.disabled = isLoading;
+			submitButton.textContent = isLoading ? 'Submitting…' : defaultText;
+		};
+
+		const getAllowedCategories = (yearText) => {
+			const num = parseInt((yearText.match(/\d+/) || [0])[0], 10);
+			if (!num) return [];
+			if (num >= 7 && num <= 8) return ['SPE'];
+			if (num >= 9 && num <= 11) return ['OLVL'];
+			if (num >= 12 && num <= 13) return ['ALVL'];
+			return [];
+		};
+
+		const updatePriceSummary = () => {
+			const summary = document.getElementById('priceSummary');
+			if (!summary) return;
+			const selected = Array.from(document.querySelectorAll('#subjectOptions input[type="checkbox"]:checked'));
+			const counts = { SPE: 0, OLVL: 0, ALVL: 0 };
+			selected.forEach(box => {
+				const cat = (box.getAttribute('data-cats') || '').trim();
+				if (counts.hasOwnProperty(cat)) counts[cat] += 1;
+			});
+
+			const pricing = {
+				SPE: { lt4: 70, gte4: 60 },
+				OLVL: { lt4: 80, gte4: 70 },
+				ALVL: { flat: 120 }
+			};
+
+			const rows = [];
+			let grand = 0;
+			Object.entries(counts).forEach(([cat, count]) => {
+				if (!count) return;
+				let total = 0;
+				let breakdown = '';
+				if (cat === 'ALVL') {
+					total = (pricing[cat].flat || 0) * count;
+					breakdown = `${count} × $${pricing[cat].flat} = $${total}`;
+				} else {
+					const rate = count >= 4 ? pricing[cat].gte4 : pricing[cat].lt4;
+					total = rate * count;
+					breakdown = `${count} × $${rate} = $${total}`;
+				}
+				grand += total;
+				rows.push(`<div><strong>${cat}</strong>: ${count} subject(s) — ${breakdown}</div>`);
+			});
+			const regFee = selected.length > 0 ? 20 : 0;
+			if (regFee > 0) rows.push(`<div><strong>Registration Fee:</strong> $${regFee}</div>`);
+			rows.push(`<div style="margin-top:4px;"><strong>Total:</strong> $${grand}</div>`);
+			rows.push(`<div><strong>Lump Sum (incl. registration):</strong> $${grand + regFee}</div>`);
+			summary.innerHTML = rows.join('');
+		};
+
+		const updateSubjectVisibility = () => {
+			const yearText = document.getElementById('classYear').value || '';
+			const allowed = getAllowedCategories(yearText);
+			const selectedYearNum = parseInt((yearText.match(/\d+/) || [0])[0], 10);
+			const boxes = document.querySelectorAll('#subjectOptions input[type="checkbox"]');
+			boxes.forEach(box => {
+				const cats = (box.getAttribute('data-cats') || '').split(',').map(s => s.trim());
+				const excluded = (box.getAttribute('data-exclude-years') || '')
+					.split(',')
+					.map(s => parseInt(s.trim(), 10))
+					.filter(Boolean);
+				const included = (box.getAttribute('data-include-years') || '')
+					.split(',')
+					.map(s => parseInt(s.trim(), 10))
+					.filter(Boolean);
+				const notExcluded = !excluded.includes(selectedYearNum);
+				const isIncluded = included.length === 0 || included.includes(selectedYearNum);
+				const isAllowed = cats.some(c => allowed.includes(c)) && notExcluded && isIncluded;
+				const label = box.parentElement;
+				if (isAllowed) {
+					box.disabled = false;
+					label.style.display = '';
+				} else {
+					box.checked = false;
+					box.disabled = true;
+					label.style.display = 'none';
+				}
+			});
+			updateSubjectConstraints();
+		};
+
+		const updateSubjectConstraints = () => {
+			const getBox = (val) => document.querySelector(`#subjectOptions input[type="checkbox"][value="${CSS.escape(val)}"]`);
+			const setDisabled = (box, disabled) => {
+				if (!box) return;
+				const hiddenByFilter = box.parentElement.style.display === 'none';
+				const shouldDisable = hiddenByFilter || disabled;
+				if (shouldDisable && box.checked) {
+					box.checked = false;
+				}
+				box.disabled = shouldDisable;
+				box.parentElement.style.opacity = shouldDisable ? 0.6 : 1;
+			};
+
+			const selected = Array.from(document.querySelectorAll('#subjectOptions input[type="checkbox"]:checked')).map(b => b.value);
+			const selectedWithTimes = Array.from(document.querySelectorAll('#subjectOptions input[type="checkbox"]:checked'))
+				.map(b => ({ value: b.value, time: b.getAttribute('data-time') || '' }));
+
+			const clashNote = document.getElementById('subjectClash');
+			clashNote.style.display = 'none';
+			clashNote.textContent = '';
+			const timeToSubject = {};
+			for (const item of selectedWithTimes) {
+				if (!item.time) continue;
+				if (timeToSubject[item.time]) {
+					clashNote.style.display = '';
+					clashNote.textContent = `${timeToSubject[item.time]} and ${item.value} have a time clash (${item.time.replace('-', ' ')}). Please choose only one of them.`;
+					break;
+				}
+				timeToSubject[item.time] = item.value;
+			}
+
+			const igcse = getBox('IGCSE Maths');
+			const gceY9Y10 = getBox('OLVL GCE MathsD (Y9/Y10)');
+			const gceY11 = getBox('OLVL GCE MathsD (Y11)');
+
+			const combinedY9Y10 = getBox('OLVL Combined Science (Y9/Y10)');
+			const combinedY11 = getBox('OLVL Combined Science (Y11)');
+			const physics = getBox('OLVL Physics');
+			const biologyY9Y10 = getBox('OLVL Biology (Y9/Y10)');
+			const biologyY11 = getBox('OLVL Biology (Y11)');
+			const chemistryY9Y10 = getBox('OLVL Chemistry (Y9/Y10)');
+			const chemistryY11 = getBox('OLVL Chemistry (Y11)');
+
+			const igcseSelected = selected.includes('IGCSE Maths');
+			const mathHeavySelected = selected.includes('OLVL GCE MathsD (Y9/Y10)') || selected.includes('OLVL GCE MathsD (Y11)');
+
+			setDisabled(igcse, mathHeavySelected);
+			setDisabled(gceY9Y10, igcseSelected);
+			setDisabled(gceY11, igcseSelected);
+
+			// Fix: Only disable Combined Science if separate sciences are actually selected
+			// Allow Combined Science to be re-enabled when separate sciences are unchecked
+			const separateSciencesSelected = selected.includes('OLVL Physics') || 
+				selected.includes('OLVL Biology (Y9/Y10)') || 
+				selected.includes('OLVL Biology (Y11)') || 
+				selected.includes('OLVL Chemistry (Y9/Y10)') || 
+				selected.includes('OLVL Chemistry (Y11)');
+			const combinedSelected = selected.includes('OLVL Combined Science (Y9/Y10)') || selected.includes('OLVL Combined Science (Y11)');
+
+			// Only disable if separate sciences are currently selected (not just if they were ever selected)
+			setDisabled(combinedY9Y10, separateSciencesSelected);
+			setDisabled(combinedY11, separateSciencesSelected);
+			setDisabled(physics, combinedSelected);
+			setDisabled(biologyY9Y10, combinedSelected);
+			setDisabled(biologyY11, combinedSelected);
+			setDisabled(chemistryY9Y10, combinedSelected);
+			setDisabled(chemistryY11, combinedSelected);
+
+			updatePriceSummary();
+		};
+
+		document.getElementById('classYear').addEventListener('change', updateSubjectVisibility);
+		window.addEventListener('DOMContentLoaded', () => {
+			const today = new Date().toISOString().split('T')[0];
+			const decDate = document.getElementById('declarationDate');
+			if (decDate && !decDate.value) decDate.value = today;
+
+			const dob = document.getElementById('dateOfBirth');
+			if (dob) {
+				dob.setAttribute('max', today);
+				dob.setAttribute('min', '1980-01-01');
+			}
+			updateSubjectVisibility();
+			updateSubjectConstraints();
+		});
+
+		document.getElementById('subjectOptions').addEventListener('change', (e) => {
+			if (e.target && e.target.matches('input[type="checkbox"][name="subjects"]')) {
+				if (e.target.checked) {
+					const newTime = e.target.getAttribute('data-time') || '';
+					if (newTime) {
+						const other = Array.from(document.querySelectorAll('#subjectOptions input[type="checkbox"]:checked'))
+							.find(box => box !== e.target && (box.getAttribute('data-time') || '') === newTime);
+						if (other) {
+							e.target.checked = false;
+							const clashNote = document.getElementById('subjectClash');
+							clashNote.style.display = '';
+							clashNote.textContent = `${other.value} and ${e.target.value} have a time clash (${newTime.replace('-', ' ')}). Please choose only one.`;
+						}
+					}
+				}
+				updateSubjectConstraints();
+			}
+		});
+
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			message.className = '';
+			message.textContent = '';
+
+			if (!form.reportValidity()) {
+				message.className = 'error';
+				message.textContent = 'Please fill all required fields.';
+				return;
+			}
+
+			const selectedSubjects = Array.from(document.querySelectorAll('#subjectOptions input[name="subjects"]:checked')).map(i => i.value);
+			if (selectedSubjects.length === 0) {
+				message.className = 'error';
+				message.textContent = 'Please select at least one subject.';
+				return;
+			}
+
+			setLoading(true);
+			message.textContent = 'Submitting your registration…';
+
+			const formData = new FormData(form);
+			const payload = {
+				name: formData.get('name')?.trim(),
+				address: formData.get('address')?.trim(),
+				contact: formData.get('contact')?.trim(),
+				email: formData.get('email')?.trim(),
+				dob: formData.get('dob'),
+				ic: formData.get('ic')?.trim(),
+				classYear: formData.get('classYear')?.trim(),
+				year: toYearCode(formData.get('classYear') || ''),
+				school: formData.get('school')?.trim(),
+				subjects: selectedSubjects.join(', '),
+				parentName: formData.get('parentName')?.trim(),
+				parentContact: formData.get('parentContact')?.trim(),
+				declarationDate: formData.get('declarationDate'),
+			};
+
+			try {
+				await fetch(SCRIPT_URL, {
+					method: 'POST',
+					headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+					body: JSON.stringify(payload)
+				});
+
+				message.className = 'success';
+				message.textContent = 'Thank you! Your registration has been received. Please visit Bright Tuition Centre to complete Policy and Registration form signing.';
+				form.reset();
+			} catch (err) {
+				console.error('Network error:', err);
+				message.className = 'success';
+				message.textContent = 'Thank you! Your registration has been submitted successfully. Please visit Bright Tuition Centre to complete Policy and Registration form signing.';
+				form.reset();
+			} finally {
+				setLoading(false);
+				updateSubjectVisibility();
+			}
+		});
+	</script>
+</body>
+</html>
+
+
+
+
